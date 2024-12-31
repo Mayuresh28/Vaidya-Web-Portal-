@@ -5,6 +5,13 @@
   min-height: 100vh;
 }
 
+/* Ensure .container height adjusts to fit .formContainer */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .header {
   text-align: center;
   font-size: 2.5rem;
@@ -81,14 +88,12 @@
 
 /* Form Container */
 .formContainer {
-  position: absolute;
-  left: 400px;
-  margin-top: 30px;
+  margin: 30px auto; /* Center the form container */
   background-color: #a8dadc; /* Cool teal background for contrast */
   padding: 25px;
   border-radius: 12px; /* Softer rounded corners */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow for emphasis */
-  width: 50vw;
+  width: 60vw; /* Adjusted width */
 }
 
 .formContainer h2 {
@@ -122,9 +127,7 @@
 }
 
 .inputField2 select {
-  position: absolute;
-  left: 390px;
-  width: 50%;
+  width: 100%;
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #457b9d; /* Border matches button color */
@@ -195,7 +198,6 @@
   }
 
   .formContainer {
-    left: 10px;
     width: 90vw; /* Make form container take up most of the width */
   }
 
@@ -262,7 +264,7 @@
   }
 
   .table {
-    font-size: 0.8rem; /* Further reduce table font size */
+    font-size: 0.5rem; /* Further reduce table font size */
   }
 
   .table th, .table td {
@@ -272,4 +274,11 @@
   .doctorSchedule {
     max-width: 100%;
   }
+  .doctorTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1d3557; /* Dark blue for title */
+  }
+  
 }
