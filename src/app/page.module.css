@@ -1,168 +1,275 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+.container {
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f1faee; /* Light background for better readability */
+  min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.header {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1d3557; /* Dark blue for strong contrast */
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
-.main {
+/* Buttons */
+.buttonContainer {
+  margin-bottom: 30px;
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  gap: 15px;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  flex-wrap: wrap; /* Allow buttons to wrap in smaller screens */
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background-color: #457b9d; /* Muted blue for buttons */
+  color: #f1faee; /* White text for contrast */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.button:hover {
+  background-color: #1d3557; /* Darker blue for hover */
+  transform: scale(1.05); /* Subtle scaling on hover */
 }
 
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+/* Doctor's schedule */
+.doctorSchedule {
+  margin: 30px auto;
+  text-align: center;
+  max-width: 80%;
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.doctorTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1d3557; /* Dark blue for title */
 }
 
-.footer img {
-  flex-shrink: 0;
+.table {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #f1faee; /* Light background for readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #a8dadc; /* Soft border color */
+}
+
+.table th {
+  background-color: #457b9d; /* Blue headers */
+  color: #f1faee; /* White text */
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #f4fdfe; /* Light background for table rows */
+  color: #0a2b40; /* Dark text for readability */
+}
+
+/* Form Container */
+.formContainer {
+  position: absolute;
+  left: 400px;
+  margin-top: 30px;
+  background-color: #a8dadc; /* Cool teal background for contrast */
+  padding: 25px;
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow for emphasis */
+  width: 50vw;
+}
+
+.formContainer h2 {
+  text-align: center;
+  color: #1d3557; /* Dark blue for contrast */
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  margin: 15px 0;
+  color: #1d3557;
+}
+
+.inputField label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1d3557; /* Dark blue text for labels */
+}
+
+.inputField input, .inputField select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #457b9d; /* Border matches button color */
+  color: black;
+  border-radius: 8px; /* Consistent rounded corners */
+  background-color: #f1faee; /* Light background for input fields */
+}
+
+.inputField2 select {
+  position: absolute;
+  left: 390px;
+  width: 50%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #457b9d; /* Border matches button color */
+  color: black;
+  border-radius: 8px; /* Consistent rounded corners */
+  background-color: #f1faee; /* Light background for input fields */
+}
+
+/* Buttons in the form */
+.inputField button {
+  padding: 12px 25px;
+  background-color: #e63946; /* Red button for action */
+  color: #f1faee; /* White text */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.inputField button:hover {
+  background-color: #1d3557; /* Darker blue for hover */
+  transform: scale(1.05); /* Subtle scaling on hover */
+}
+
+.cancelButton {
+  background-color: #457b9d; /* Muted blue for cancel */
+  margin-left: 10px;
+}
+
+.cancelButton:hover {
+  background-color: #1d3557; /* Darker blue for hover */
+}
+
+/* New style for All Scheduled Appointments */
+.allAppointmentsTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1d3557; /* Dark blue for title */
+}
+
+.allAppointments {
+  margin: 30px auto;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Responsive styles using media queries */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .header {
+    font-size: 2rem; /* Smaller font size for smaller screens */
   }
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+  .button {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
+  .buttonContainer {
     flex-direction: column;
+    gap: 10px;
   }
 
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+  .formContainer {
+    left: 10px;
+    width: 90vw; /* Make form container take up most of the width */
   }
 
-  a.secondary {
-    min-width: auto;
+  .inputField input,
+  .inputField select {
+    padding: 10px;
+    font-size: 0.9rem;
   }
 
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .table {
+    width: 100%;
+    font-size: 0.9rem; /* Smaller text for table on small screens */
+  }
+
+  .table th, .table td {
+    padding: 10px;
+  }
+
+  .inputField2 select {
+    width: 100%;
+    left: 0; /* Center the dropdown */
+    position: relative;
+  }
+
+  .doctorSchedule {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .doctorTitle {
+    font-size: 1.5rem; /* Smaller title for small screens */
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    font-size: 1.8rem; /* Even smaller font size */
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .formContainer {
+    width: 100vw;
+    left: 0; /* Make form take full width */
+    padding: 20px;
+  }
+
+  .inputField input,
+  .inputField select {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .table {
+    font-size: 0.8rem; /* Further reduce table font size */
+  }
+
+  .table th, .table td {
+    padding: 8px;
+  }
+
+  .doctorSchedule {
+    max-width: 100%;
   }
 }
