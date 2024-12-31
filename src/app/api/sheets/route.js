@@ -1,5 +1,5 @@
 export async function GET(request) {
-    const SHEETDB_URL = 'https://sheetdb.io/api/v1/n4l8iuoqbpra4';
+    const SHEETDB_URL = 'https://sheetdb.io/api/v1/qppfcvx5p8w7h';
     const url = new URL(request.url);
     const doctor = url.searchParams.get('doctor'); // Get the 'doctor' query parameter
   
@@ -8,8 +8,8 @@ export async function GET(request) {
       const data = await response.json();
   
       // If a doctor is specified, filter the data
-      const filteredData = doctor 
-        ? data.filter((appointment) => appointment.Doctor === doctor)
+      const filteredData = doctor
+        ? data.filter((appointment) => appointment.Doctor.includes(doctor))
         : data;
   
       return new Response(JSON.stringify(filteredData), {
@@ -25,7 +25,7 @@ export async function GET(request) {
   }
   
   export async function POST(request) {
-    const SHEETDB_URL = 'https://sheetdb.io/api/v1/n4l8iuoqbpra4';
+    const SHEETDB_URL = 'https://sheetdb.io/api/v1/qppfcvx5p8w7h';
     const body = await request.json();
   
     try {
@@ -48,4 +48,3 @@ export async function GET(request) {
       });
     }
   }
-  
